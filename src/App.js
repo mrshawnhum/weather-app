@@ -1,9 +1,17 @@
+import dotenv from 'dotenv';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+dotenv.config()
+
+const api = {
+  key: process.env.REACT_APP_API_KEY,
+  base: "http://api.openweathermap.org/data/2.5/"
+}
 
 function App() {
-  return (
+  return (<div className="App">
+    <h1>Hello</h1>
+  </div>
     
   );
 }
