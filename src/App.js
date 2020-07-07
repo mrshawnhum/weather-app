@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 import React from 'react';
 
+import {Search} from "./Search/Search"
+
 dotenv.config()
 
 const api = {
@@ -9,8 +11,11 @@ const api = {
 }
 
 function App() {
-  return (<div className="App">
-    <h1>Hello</h1>
+  return (
+  <div className="App">
+    <main>
+    <Search />
+    </main>
   </div>
     
   );

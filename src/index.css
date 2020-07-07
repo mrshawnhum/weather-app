@@ -1,0 +1,26 @@
+body {
+  font-family: 'montseratti', sams-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  background-image: url('https://i.pinimg.com/originals/e0/98/64/e098645858af01442023500cab0802d1.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.App.warm {
+  background-image: url('https://i.pinimg.com/originals/e0/98/64/e098645858af01442023500cab0802d1.jpg');
+}
+
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
+  padding: 25px;
+}
