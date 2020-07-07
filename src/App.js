@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import React from 'react';
 
+import {getDate} from "./Date/Date"
 import {Search} from "./Search/Search"
 
 dotenv.config()
@@ -11,10 +12,17 @@ const api = {
 }
 
 function App() {
+
+
+
   return (
   <div className="App">
     <main>
     <Search />
+    <div className="location-box">
+      <div className="location">Saint Louis, Mo</div>
+      <div className="date">{getDate(new Date())}</div>
+    </div>
     </main>
   </div>
     
