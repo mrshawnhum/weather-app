@@ -45,7 +45,7 @@ const search = evt => {
       </div>
 
     {(typeof weather.main != "undefined") ? (
-    <div>
+    <div className="content">
       <div className="location-box">
         <div className="location">{weather.name}, {weather.sys.country}</div>
         <div className="date">{getDate(new Date())}</div>
