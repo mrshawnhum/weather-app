@@ -165,3 +165,25 @@ main {
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5); 
 }
+
+@media screen and (min-width: 1024px) {
+  .content {
+    margin-top: 180px;
+  }
+
+  .btn {
+    margin-top: -25px;
+  }
+}
+
+@media screen and (max-height: 568px) {
+  .btn {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (min-height: 1412px) {
+  .btn {
+    margin-top: -55px;
+  }
+}
