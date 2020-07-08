@@ -12,7 +12,7 @@ function App() {
 
 
 const search = evt => {
-  if(evt.key === 'Enter') {
+  if(evt.type === 'click' || evt.key === 'Enter') {
   fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
   .then(res => res.json())
   .then(results => {
@@ -39,6 +39,9 @@ const search = evt => {
         onChange={e => setQuery(e.target.value)} 
         value={query} 
         onKeyPress={search} /> 
+      </div>
+      <div className="button_container">
+      <button className="btn" onClick={search} ><span>Enter</span></button>
       </div>
 
     {(typeof weather.main != "undefined") ? (
