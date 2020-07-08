@@ -9,5 +9,5 @@ export const getDate = (d) => {
     let month = months[d.getMonth()]
     let year = d.getFullYear()
 
-    return `${day} ${date} ${month} ${year}`
+    return `${day} ${month} ${date} ${year}`
 }

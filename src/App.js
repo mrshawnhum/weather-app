@@ -1,28 +1,60 @@
-import dotenv from 'dotenv';
-import React from 'react';
+import React, {useState} from 'react';
 
+import {api} from "./api/index"
+import {convertToFah} from "./utils/index"
 import {getDate} from "./Date/Date"
-import {Search} from "./Search/Search"
 
-dotenv.config()
 
-const api = {
-  key: process.env.REACT_APP_API_KEY,
-  base: "http://api.openweathermap.org/data/2.5/"
-}
 
 function App() {
+  const [query, setQuery] = useState('')
+  const[weather, setWeather] = useState({})
 
 
+const search = evt => {
+  if(evt.key === 'Enter') {
+  fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+  .then(res => res.json())
+  .then(results => {
+      setWeather(results);
+      setQuery('');
+  })
+  }
+}
 
   return (
-  <div className="App">
+  <div className={
+    (typeof weather.main != "undefined")
+    ? ((weather.main.temp > 1)
+      ? 'App' 
+      : 'App cold')
+      : 'App'}>
     <main>
-    <Search />
-    <div className="location-box">
-      <div className="location">Saint Louis, Mo</div>
-      <div className="date">{getDate(new Date())}</div>
+
+      <div className="search-box">
+        <input 
+        type="text" 
+        className="search-bar" 
+        placeholder="&#128269;Search By City" 
+        onChange={e => setQuery(e.target.value)} 
+        value={query} 
+        onKeyPress={search} /> 
+      </div>
+
+    {(typeof weather.main != "undefined") ? (
+    <div>
+      <div className="location-box">
+        <div className="location">{weather.name}, {weather.sys.country}</div>
+        <div className="date">{getDate(new Date())}</div>
+      </div>
+      <div className="weather-box">
+        <div className="temp">
+          {Math.round(convertToFah(weather.main.temp))}°f
+        </div>
+        <div className="weather">{weather.weather[0].main}</div>
+      </div>
     </div>
+    ) : ('')}
     </main>
   </div>
     
