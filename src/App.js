@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import {api} from "./api/index"
 import {convertToFah} from "./utils/index"
-import {getDate} from "./Date/Date"
+import {getDate} from "./components"
 
 
 
