@@ -1,6 +1,6 @@
 # Mobile-friendly Weather React App
 
-I have created a mobile-friendly weather app. Utilizing openweathermap.org api, You can type in your city and if found, the app will load the current temperature and condition. This is still a working progress as i want to scale the app for all viewing platforms(pc, tablet, etc.). I also need to add error handling for when the city entered is not found by the app. To view the app, please click the link below! 
+I have created a mobile-friendly weather app. Utilizing openweathermap.org api, You can type in your city and if found, the app will load the current temperature and condition. This is still a working progress as I want to add error handling for when the city entered is not found by the app. To view the app, please click the link below! 
 
 ## Live site link
 
