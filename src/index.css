@@ -166,13 +166,32 @@ main {
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5); 
 }
 
+.welcome {
+  min-height: 6em;
+  max-width: 45%;
+  display: flex;
+  align-items: center;
+
+
+  text-align: center;
+  margin: 10em auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+
+  color: #FFF;
+  font-size: 22px;
+  font-weight: 900;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
 @media screen and (min-width: 1024px) {
   .content {
     margin-top: 180px;
   }
 
   .btn {
-    margin-top: -25px;
+    margin-top: -5px;
   }
 }
 
@@ -185,5 +204,13 @@ main {
 @media screen and (min-height: 1412px) {
   .btn {
     margin-top: -55px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .welcome {
+    font-size: 30px;
+    margin-right: 32em;
+    max-width: 20em;
   }
 }

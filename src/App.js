@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import {api} from "./api/index"
 import {convertToFah} from "./utils/index"
-import {getDate} from "./components"
+import {getDate, Welcome} from "./components"
 
 
 
@@ -44,6 +44,7 @@ const search = evt => {
       <button className="btn" onClick={search} ><span>Enter</span></button>
       </div>
 
+
     {(typeof weather.main != "undefined") ? (
     <div className="content">
       <div className="location-box">
@@ -57,7 +58,9 @@ const search = evt => {
         <div className="weather">{weather.weather[0].main}</div>
       </div>
     </div>
-    ) : ('')}
+    ) : (<div className="welcome">
+        <Welcome />
+      </div>)}
     </main>
   </div>
     
